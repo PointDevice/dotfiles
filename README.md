@@ -4,6 +4,8 @@ My messy ass dotfiles for my personal system, pending some cleanup
 
 Meant to be used with my [NixOS Config](https://github.com/PointDevice/NixosConfig) 
 
+The remainder of my systems config is managed through my NixOS instal with home-manager
+
 ---
 
 WM: [SwayFX](https://github.com/WillPower3309/swayfx)
@@ -30,7 +32,7 @@ Shell: [Z Shell](https://github.com/zsh-users/zsh) with [oh my zsh](https://gith
 From your home folder, run the following
 
 ```
-git clone git@github.com:PointDevice/dotfiles.git 
+git clone --recursive git@github.com:PointDevice/dotfiles.git
 cd dotfiles
 stow .
 ```
