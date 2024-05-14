@@ -32,7 +32,7 @@ Shell: [Z Shell](https://github.com/zsh-users/zsh) with [oh my zsh](https://gith
 From your home folder, run the following
 
 ```
-git clone --recursive git@github.com:PointDevice/dotfiles.git
+git clone --recursive https://github.com/PointDevice/dotfiles.git
 cd dotfiles
 stow .
 ```
