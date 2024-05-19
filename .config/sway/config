@@ -129,6 +129,8 @@ for_window {
   [title = "File Operation Progress"] floating enabled
   [title = "Confirm to replace files"] floating enabled
   [app_id = "ulauncher"] floating enabled, border none, blur disable
+  [class = "Godot"] floating enabled
+  [class = "Godot" title = "Godot Engine$"] floating disable
 }
 
 layer_effects "waybar" blur enable; shadows enable
