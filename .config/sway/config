@@ -86,6 +86,7 @@ input "type:touchpad" {
 }
 
 floating_modifier $mod
+mouse_warping container
 
 # Output configuration
 output * bg $background fill
