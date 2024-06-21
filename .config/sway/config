@@ -178,6 +178,12 @@ bindsym --locked XF86MonBrightnessDown exec brillo -s nvidia_wmi_ec_backlight -U
 bindsym --locked XF86KbdBrightnessDown exec brightnessctl set 1- -d asus::kbd_backlight
 bindsym --locked XF86KbdBrightnessUp exec brightnessctl set 1+ -d asus::kbd_backlight
 
+#media binds 
+#bindsym XF86AudioPlay exec "playerctl play-pause"
+#bindsym XF86AudioStop exec "mpris-ctl --player active stop"
+#bindsym XF86AudioNext exec "mpris-ctl --player active next"
+#bindsym XF86AudioPrev exec "mpris-ctl --player active prev"
+
 # Toggle Redshift
 #bindsym $mod+Home exec --no-startup-id pkill -USR1 redshift
 
@@ -323,6 +329,8 @@ exec spotify
 exec ulauncher
 exec mako
 exec otd-daemon
+exec playerctld daemon
 
 include ~/.config/sway/$(hostname)/*
 include /etc/sway/config.d/*
+exec playerctld daemon
