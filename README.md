@@ -22,6 +22,8 @@ Status Bar: [waybar](https://github.com/Alexays/Waybar)
 
 Shell: [Z Shell](https://github.com/zsh-users/zsh) with [oh my zsh](https://github.com/ohmyzsh/ohmyzsh)
 
+Prompt: [Oh My Posh](https://github.com/JanDeDobbeleer/oh-my-posh)
+
 ---
 ## installation requirements
 
