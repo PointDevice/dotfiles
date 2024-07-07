@@ -1,0 +1,98 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 2
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    type = 'session'
+    style = 'diamond'
+    foreground = 'p:black'
+    background = 'p:pink'
+    leading_diamond = ''
+    powerline_symbol = ''
+    template = '{{ if .SSHSession }} {{ end }}{{ if .Env.IN_NIX_SHELL }}({{.Env.NIX_SHELL_PACKAGES}}){{end}}{{ .UserName }}'
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = 'p:white'
+    background = 'p:blue'
+    template = ' {{ path .Path .Location }}'
+    
+    [blocks.segments.properties]
+      Style = 'full'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = 'p:black'
+    foreground_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}p:black{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:white{{ end }}', '{{ if gt .Ahead 0 }}p:white{{ end }}']
+    background = 'p:green'
+    background_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}p:peach{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}', '{{ if gt .Ahead 0 }}#49416D{{ end }}', '{{ if gt .Behind 0 }}#7A306C{{ end }}']
+    template = '{{ if .UpstreamURL }}{{url .HEAD .UpstreamURL}}{{else}}{{.HEAD}}{{ end }}{{ if .Working.Changed }} {{.Working.String}}{{ end }}{{ if .Staging.Changed }} {{.Staging.String}}{{ end }}'
+
+    [blocks.segments.properties]
+      branch_max_length = 25
+      fetch_status = true
+      fetch_upstream_icon = true
+
+  [[blocks.segments]]
+    type = 'root'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = 'p:white'
+    background = 'p:yellow'
+    template = '  '
+
+  [[blocks.segments]]
+    type = 'status'
+    style = 'diamond'
+    foreground = 'p:white'
+    background = 'p:green'
+    background_templates = ['{{ if gt .Code 0 }}p:red{{ end }}']
+    powerline_symbol = ''
+    trailing_diamond = ''
+    template = ' {{ if gt .Code 0 }}{{ else }}{{ end }} '
+
+    [blocks.segments.properties]
+      always_enabled = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground = 'p:white'
+    background = 'transparent'
+    template = '->'
+
+[transient_prompt]
+  foreground = 'p:white'
+  background = 'transparent'
+  template = '-> '
+
+[secondary_prompt]
+  foreground = 'p:white'
+  background = 'transparent'
+  template = '-> '
+
+[palette]
+  black = '#262B44'
+  blue = '#8AADF4'
+  green = '#A6DA95'
+  orange = '#F07623'
+  red = '#ED8796'
+  white = '#E0DEF4'
+  yellow = '#F3AE35'
+  pink = '#F5BDE6'
+  peach = '#F5A97F'
