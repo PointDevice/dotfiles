@@ -11,8 +11,5 @@ zstyle :compinstall filename '/home/point/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#ZSH_CUSTOM="$HOME/zsh_custom"
-#ZSH_THEME="catppuccin"
-#source $ZSH/oh-my-zsh.sh
-#eval $(zoxide init --cmd cd zsh)
 source $ZSH_CUSTOM/plugins/nix-shell/nix-shell.plugin.zsh
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/point.toml)"
