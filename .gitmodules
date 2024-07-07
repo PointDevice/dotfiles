@@ -1,3 +1,6 @@
 [submodule ".config/zsh_custom/plugins/nix-shell"]
 	path = .config/zsh_custom/plugins/nix-shell
 	url = https://github.com/chisui/zsh-nix-shell.git
+[submodule ".config/zsh_custom/plugins/fzf-tab"]
+	path = .config/zsh_custom/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
