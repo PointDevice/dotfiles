@@ -15,6 +15,7 @@ set $discord flatpak run dev.vencord.Vesktop
 set $screenshot grim ~/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 set $screenclip slurp | grim -g - ~/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 set $background ~/.config/sway/rainbow-cat.png
+set $emojiSel rofimoji -a type --typer wtype --selector-args="-theme ~/.config/rofi/catppuccin-macchiato.rasi"
 
 set $cl_high #8bd5ca
 set $cl_indi #d9d8d8
@@ -132,6 +133,7 @@ for_window {
   [app_id = "ulauncher"] floating enabled, border none, blur disable
   [class = "Godot"] floating enabled
   [class = "Godot" title = "Godot Engine$"] floating disable
+  [app_id = $web urgent = "latest"] focus
 }
 
 layer_effects "waybar" blur enable; shadows enable
@@ -143,6 +145,7 @@ bindsym $mod+Shift+s exec $screenclip
 bindsym $mod+r exec $menu
 bindsym $mod+w exec $web
 bindsym $mod+e exec $browser
+bindsym $mod+Period exec $emojiSel
 
 
 bindsym $mod+Shift+q kill
