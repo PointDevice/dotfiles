@@ -4,3 +4,6 @@
 [submodule ".config/zsh_custom/plugins/fzf-tab"]
 	path = .config/zsh_custom/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule ".config/shell/shell-mommy"]
+	path = .config/shell/shell-mommy
+	url = https://github.com/sudofox/shell-mommy.git
